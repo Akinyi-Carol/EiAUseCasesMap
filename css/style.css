@@ -1,0 +1,36 @@
+body {
+	margin: 0;
+}
+html, body, #leaflet {
+	height: 100%
+}
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+.h1 {text-align: center;}
+.icenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 50%; */
+}
+.tcenter {
+  text-align: center;
+  border: null;
+}
+td, th {
+  text-align: center;
+  padding: 5%;
+}
+.imgContainer{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	float:left;
+}
