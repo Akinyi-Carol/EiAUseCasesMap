@@ -13,7 +13,12 @@ html, body, #leaflet {
   flex: 33.33%;
   padding: 5px;
 }
-.h1 {text-align: center;}
+h1 {
+    font-size: 24px !important;
+    margin-top: 20px !important;
+    font-weight: 600 !important;
+}
+
 .icenter {
   display: block;
   margin-left: auto;
@@ -24,13 +29,74 @@ html, body, #leaflet {
   text-align: center;
   border: null;
 }
+table{
+    background: #fafafa;
+}
+.table>:not(:first-child) {
+    border-top: inherit;
+}
 td, th {
-  text-align: center;
-  padding: 5%;
+  text-align: left;
+  /*padding: 5%;*/
+}
+
+thead th{
+    font-size: 16px;
 }
 .imgContainer{
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	float:left;
+}
+
+.aj{
+    color: #28a046;
+    background: #95d4a5
+}
+.cohort-name{
+    color: #c15e36;
+    font-size: 20px;
+    width: 100%;
+    padding: 15px 0 6px 0;
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.td-row{
+    display: table-row;
+}
+
+.td-cell{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.td-cell img{
+    margin-right: 5px;
+}
+
+.accordion-item{
+    border: none;
+}
+
+.accordion-header button.accordion-button{
+    background: none;
+    border-bottom: none;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+    margin: 15px 0;
+}
+
+.accordion-button:not(.collapsed) {
+    color: #c15e36;
+    font-weight: 600;
+}
+
+.accordion-button:not(.collapsed)::after {
+    filter: invert(62%) sepia(9%) saturate(2945%) hue-rotate(329deg) brightness(72%) contrast(116%);
+}
+
+.accordion-body{
+    padding: 6px 0 3px 0;
 }
