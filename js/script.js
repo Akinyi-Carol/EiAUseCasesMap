@@ -16,9 +16,49 @@ var sidebar = L.control.sidebar('sidebar', {
 
 map.addControl(sidebar);
 
+/*Legend specific*/
+var legend = L.control({ position: "bottomleft" });
+
+legend.onAdd = function(map) {
+  var div = L.DomUtil.create("div", "legend");
+  div.innerHTML += '<i style="background: #c15e36"></i><span>Current Use Cases</span><br>';
+  div.innerHTML += '<i style="background: rgba(193, 94, 54, 0.6)"></i><span>Cohort 2 Use Cases</span><br>';
+  div.innerHTML += '<i style="background: #28a046"></i><span>Multiple Cohorts Use Cases</span><br>';
+  div.innerHTML += '<i style="background: rgba(83, 182, 72, 0.6)"></i><span>Transform Use Cases</span><br>';
+  div.innerHTML += '<i style="background: rgba(83, 182, 72, 0.2)"></i><span>Strategic Ecosystem Partner Use Cases</span><br>';
+  div.innerHTML += '<i style="background: #F9D71C"></i><span>Waitlisted Use Cases</span><br>';
+  return div;
+};
+
+legend.addTo(map);
+
 // Style
 function styleUC(feature) {
-		if (['NGA', 'IND', 'NPL', 'MEX', 'PER', 'COL', 'ETH', 'GHA', 'EGY', 'KHM', 'RWA'].includes(feature.properties['iso3'])) {
+		if (['MEX', 'PER', 'COL', 'IND', 'KHM', 'EGY'].includes(feature.properties['iso3'])) {
+			return {
+				color: 'rgba(255,255,255,0.8)',
+				fillOpacity: 1,
+				fillColor: '#c15e36',
+				interactive: true,
+			};
+		}
+		else if (['MAR'].includes(feature.properties['iso3'])) {
+			return {
+				color: 'rgba(255,255,255,0.8)',
+				fillOpacity: 0.6,
+				fillColor: '#53b648',
+				interactive: true,
+			};
+		}
+		else if (['CIV', 'BFA'].includes(feature.properties['iso3'])) {
+			return {
+				color: 'rgba(255,255,255,0.8)',
+				fillOpacity: 0.6,
+				fillColor: '#c15e36',
+				interactive: true,
+			};
+		}
+		else if (['COD', 'UGA', 'KEN', 'TZA', 'RWA', 'BDI', 'ZMB', 'MWI', 'GHA', 'NGA', 'ETH'].includes(feature.properties['iso3'])) {
 			return {
 				color: 'rgba(255,255,255,0.8)',
 				fillOpacity: 1,
@@ -26,11 +66,19 @@ function styleUC(feature) {
 				interactive: true,
 			};
 		}
-		else if (['CIV', 'BFA', 'KEN', 'MWI', 'BDI', 'TZA', 'UGA', 'COD', 'ZMB', 'MOZ', 'MAR', 'VNM', 'MLI'].includes(feature.properties['iso3'])) {
+		else if (['MOZ'].includes(feature.properties['iso3'])) {
 			return {
 				color: 'rgba(255,255,255,0.8)',
-				fillOpacity: 1,
-				fillColor: '#95d4a5',
+				fillOpacity: 0.2,
+				fillColor: '#28a046',
+				interactive: true,
+			};
+		}
+		else if (['VNM'].includes(feature.properties['iso3'])) {
+			return {
+				color: 'rgba(255,255,255,0.8)',
+				fillOpacity: 0.4,
+				fillColor: '#F9D71C',
 				interactive: true,
 			};
 		}
