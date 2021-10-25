@@ -84,8 +84,10 @@ function styleUC(feature) {
 		}
 		else {
 			return {
-				color: 'rgba(89,85,88,0)',
-				fill: false,
+				color: '#e5e5e5',
+				fillOpacity: 1,
+				fillColor: '#e5e5e5',
+				fill: true
 			};
 		};
 	};
