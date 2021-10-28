@@ -25,8 +25,7 @@ legend.onAdd = function(map) {
   div.innerHTML += '<i style="background: rgba(193, 94, 54, 0.6)"></i><span>Cohort 2 Use Cases</span><br>';
   div.innerHTML += '<i style="background: #28a046"></i><span>Multiple Cohorts Use Cases</span><br>';
   div.innerHTML += '<i style="background: rgba(83, 182, 72, 0.6)"></i><span>Transform Use Cases</span><br>';
-  div.innerHTML += '<i style="background: rgba(83, 182, 72, 0.2)"></i><span>Strategic Ecosystem Partner Use Cases</span><br>';
-  div.innerHTML += '<i style="background: #F9D71C"></i><span>Waitlisted Use Cases</span><br>';
+  div.innerHTML += '<i style="background: #68c199"></i><span>Strategic Ecosystem Partner Use Cases</span><br>';
   return div;
 };
 
@@ -50,7 +49,7 @@ function styleUC(feature) {
 				interactive: true,
 			};
 		}
-		else if (['CIV', 'BFA'].includes(feature.properties['iso3'])) {
+		else if (['CIV', 'BFA', 'VNM'].includes(feature.properties['iso3'])) {
 			return {
 				color: 'rgba(255,255,255,0.8)',
 				fillOpacity: 0.6,
@@ -58,7 +57,7 @@ function styleUC(feature) {
 				interactive: true,
 			};
 		}
-		else if (['COD', 'UGA', 'KEN', 'TZA', 'RWA', 'BDI', 'ZMB', 'MWI', 'GHA', 'NGA', 'ETH'].includes(feature.properties['iso3'])) {
+		else if (['UGA', 'KEN', 'TZA', 'RWA', 'BDI', 'ZMB', 'MWI', 'GHA', 'NGA', 'ETH'].includes(feature.properties['iso3'])) {
 			return {
 				color: 'rgba(255,255,255,0.8)',
 				fillOpacity: 1,
@@ -66,19 +65,11 @@ function styleUC(feature) {
 				interactive: true,
 			};
 		}
-		else if (['MOZ'].includes(feature.properties['iso3'])) {
+		else if (['MOZ', 'COD', 'MLI'].includes(feature.properties['iso3'])) {
 			return {
 				color: 'rgba(255,255,255,0.8)',
-				fillOpacity: 0.2,
-				fillColor: '#28a046',
-				interactive: true,
-			};
-		}
-		else if (['VNM'].includes(feature.properties['iso3'])) {
-			return {
-				color: 'rgba(255,255,255,0.8)',
-				fillOpacity: 0.4,
-				fillColor: '#F9D71C',
+				fillOpacity: 1,
+				fillColor: '#68c199',
 				interactive: true,
 			};
 		}
@@ -219,10 +210,46 @@ function contentUC(feature,layer) {
 								  <div class="accordion-item">\
 									<h2 class="accordion-header" id="headingThree">\
 									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">\
-										Waitlisted Use Cases\
+										Strategic Ecosystem Partner Use Cases\
 									  </button>\
 									</h2>\
 									<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">\
+										<div class="accordion-body">\
+											<table style="width:100%;" class="table table-bordered table-responsive">\
+												<thead>\
+													<tr>\
+														<th>Use Case</th>\
+														<th>Farming System</th>\
+														<th>Mandate Crops</th>\
+														<th>Demand Partners</th>\
+													</tr>\
+												</thead>\
+												<tbody>\
+													<tr>\
+														<th>AFRICARISING</th>\
+														<td>\
+															Various\
+														</td>\
+														<td>\
+															Various\
+														</td>\
+														<td>\
+															<img src="img/partner/DPM-RGB.png" width="30" height="30"><br>\
+															Demand Partner\
+														</td>\
+													</tr>\
+												</tbody>\
+											</table>\
+										</div>\
+									</div>\
+								  </div>\
+								  <div class="accordion-item">\
+									<h2 class="accordion-header" id="headingFour">\
+									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">\
+										Waitlisted Use Cases\
+									  </button>\
+									</h2>\
+									<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">\
 										<div class="accordion-body">\
 											<table style="width:100%;" class="table table-bordered table-responsive">\
 												<thead>\
@@ -386,10 +413,46 @@ function contentUC(feature,layer) {
 								  <div class="accordion-item">\
 									<h2 class="accordion-header" id="headingTwo">\
 									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">\
-										Waitlisted Use Cases\
+										Strategic Ecosystem Partner Use Cases\
 									  </button>\
 									</h2>\
 									<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">\
+									  <div class="accordion-body">\
+									  <table style="width:100%;" class="table table-bordered table-responsive">\
+										<thead>\
+											<tr>\
+												<th>Use Case</th>\
+												<th>Farming System</th>\
+												<th>Mandate Crops</th>\
+												<th>Demand Partners</th>\
+											</tr>\
+										</thead>\
+										<tbody>\
+											<tr>\
+												<th>TAAT</th>\
+												<td>\
+													Various\
+												</td>\
+												<td>\
+													Various\
+												</td>\
+												<td>\
+													<img src="img/partner/DPM-RGB.png" width="30" height="30"><br>\
+													Demand Partner\
+												</td>\
+											</tr>\
+										</tbody>\
+									</table>\
+									  </div>\
+									</div>\
+								  </div>\
+								  <div class="accordion-item">\
+									<h2 class="accordion-header" id="headingThree">\
+									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">\
+										Waitlisted Use Cases\
+									  </button>\
+									</h2>\
+									<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">\
 									  <div class="accordion-body">\
 									  <table style="width:100%;" class="table table-bordered table-responsive">\
 										<thead>\
@@ -420,19 +483,6 @@ function contentUC(feature,layer) {
 												<td>\
 													<img src="img/partner/CT-RGB.png" width="30" height="30"><br>\
 													Commodity Traders\
-												</td>\
-											</tr>\
-											<tr>\
-												<th>TAAT</th>\
-												<td>\
-													Various\
-												</td>\
-												<td>\
-													Various\
-												</td>\
-												<td>\
-													<img src="img/partner/DPM-RGB.png" width="30" height="30"><br>\
-													Demand Partner\
 												</td>\
 											</tr>\
 										</tbody>\
@@ -624,6 +674,42 @@ function contentUC(feature,layer) {
 										</tbody>\
 									</table>\
 									  </div>\
+									</div>\
+								  </div>\
+								  <div class="accordion-item">\
+									<h2 class="accordion-header" id="headingThree">\
+									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">\
+										Strategic Ecosystem Partner Use Cases\
+									  </button>\
+									</h2>\
+									<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">\
+										<div class="accordion-body">\
+											<table style="width:100%;" class="table table-bordered table-responsive">\
+												<thead>\
+													<tr>\
+														<th>Use Case</th>\
+														<th>Farming System</th>\
+														<th>Mandate Crops</th>\
+														<th>Demand Partners</th>\
+													</tr>\
+												</thead>\
+												<tbody>\
+													<tr>\
+														<th>AFRICARISING</th>\
+														<td>\
+															Various\
+														</td>\
+														<td>\
+															Various\
+														</td>\
+														<td>\
+															<img src="img/partner/DPM-RGB.png" width="30" height="30"><br>\
+															Demand Partner\
+														</td>\
+													</tr>\
+												</tbody>\
+											</table>\
+										</div>\
 									</div>\
 								  </div>\
 								</div>\
@@ -1039,46 +1125,23 @@ function contentUC(feature,layer) {
 														<span class="td-cell">Commodity Traders</span>\
 													</td>\
 												</tr>\
+												<tr>\
+													<th>TAAT</th>\
+													<td>\
+														Various\
+													</td>\
+													<td>\
+														Various\
+													</td>\
+													<td>\
+														<span class="td-cell">\
+															<img src="img/partner/DPM-RGB.png" width="30" height="30">\
+														</span>\
+														<span class="td-cell">TAAT</span>\
+													</td>\
+												</tr>\
 											</tbody>\
 										</table>\
-									  </div>\
-									</div>\
-								  </div>\
-								  <div class="accordion-item">\
-									<h2 class="accordion-header" id="headingTwo">\
-									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">\
-										Waitlisted Use Cases\
-									  </button>\
-									</h2>\
-									<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">\
-									  <div class="accordion-body">\
-									  <table style="width:100%;" class="table table-bordered table-responsive">\
-										<thead>\
-											<tr>\
-												<th>Use Cases</th>\
-												<th>Farming System</th>\
-												<th>Mandate Crops</th>\
-												<th>Demand Partners</th>\
-											</tr>\
-										</thead>\
-										<tbody>\
-											<tr>\
-												<th>TAAT</th>\
-												<td>\
-													Various\
-												</td>\
-												<td>\
-													Various\
-												</td>\
-												<td>\
-													<span class="td-cell">\
-														<img src="img/partner/DPM-RGB.png" width="30" height="30">\
-													</span>\
-													<span class="td-cell">TAAT</span>\
-												</td>\
-											</tr>\
-										</tbody>\
-									</table>\
 									  </div>\
 									</div>\
 								  </div>\
@@ -1263,6 +1326,36 @@ function contentUC(feature,layer) {
 														<span class="td-cell">Farmer Supporting NGOs</span>\
 													</td>\
 												</tr>\
+												<tr>\
+													<th>TAAT</th>\
+													<td>\
+														Various\
+													</td>\
+													<td>\
+														Various\
+													</td>\
+													<td>\
+														<span class="td-cell">\
+															<img src="img/partner/DPM-RGB.png" width="30" height="30">\
+														</span>\
+														<span class="td-cell">Demand Partner</span>\
+													</td>\
+												</tr>\
+												<tr>\
+													<th>AFRICARISING</th>\
+													<td>\
+														Various\
+													</td>\
+													<td>\
+														Various\
+													</td>\
+													<td>\
+														<span class="td-cell">\
+															<img src="img/partner/DPM-RGB.png" width="30" height="30">\
+														</span>\
+														<span class="td-cell">Demand Partner</span>\
+													</td>\
+												</tr>\
 											</tbody>\
 										</table>\
 									  </div>\
@@ -1306,36 +1399,6 @@ function contentUC(feature,layer) {
 												<td>\
 													<img src="img/partner/FS_NGOs-RGB.png" width="30" height="30"><br>\
 													Farmer Supporting NGOs\
-												</td>\
-											</tr>\
-											<tr>\
-												<th>TAAT</th>\
-												<td>\
-													Various\
-												</td>\
-												<td>\
-													Various\
-												</td>\
-												<td>\
-													<span class="td-cell">\
-														<img src="img/partner/DPM-RGB.png" width="30" height="30">\
-													</span>\
-													<span class="td-cell">Demand Partner</span>\
-												</td>\
-											</tr>\
-											<tr>\
-												<th>AFRICARISING</th>\
-												<td>\
-													Various\
-												</td>\
-												<td>\
-													Various\
-												</td>\
-												<td>\
-													<span class="td-cell">\
-														<img src="img/partner/DPM-RGB.png" width="30" height="30">\
-													</span>\
-													<span class="td-cell">Demand Partner</span>\
 												</td>\
 											</tr>\
 										</tbody>\
@@ -1484,49 +1547,26 @@ function contentUC(feature,layer) {
 													Farmer Supporting NGOs\
 												</td>\
 											</tr>\
+											<tr>\
+												<th>AFRICARISING</th>\
+												<td>\
+													Various\
+												</td>\
+												<td>\
+													Various\
+												</td>\
+												<td>\
+													<span class="td-row">\
+														<span class="td-cell">\
+															<img src="img/partner/DPM-RGB.png" width="30" height="30">\
+														</span>\
+														<span class="td-cell">Demand Partner</span>\
+													</span>\
+												</td>\
+											</tr>\
 										</tbody>\
 									</table>\
 									  </div>\
-									</div>\
-								  </div>\
-								  <div class="accordion-item">\
-									<h2 class="accordion-header" id="headingThree">\
-									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">\
-										Waitlisted Use Cases\
-									  </button>\
-									</h2>\
-									<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">\
-										<div class="accordion-body">\
-											<table style="width:100%;" class="table table-bordered table-responsive">\
-												<thead>\
-													<tr>\
-														<th>Use Case</th>\
-														<th>Farming System</th>\
-														<th>Mandate Crops</th>\
-														<th>Demand Partners</th>\
-													</tr>\
-												</thead>\
-												<tbody>\
-													<tr>\
-														<th>AFRICARISING</th>\
-														<td>\
-															Various\
-														</td>\
-														<td>\
-															Various\
-														</td>\
-														<td>\
-															<span class="td-row">\
-																<span class="td-cell">\
-																	<img src="img/partner/DPM-RGB.png" width="30" height="30">\
-																</span>\
-																<span class="td-cell">Demand Partner</span>\
-															</span>\
-														</td>\
-													</tr>\
-												</tbody>\
-											</table>\
-										</div>\
 									</div>\
 								  </div>\
 								</div>\
@@ -1642,30 +1682,6 @@ function contentUC(feature,layer) {
 											</td>\
 										</tr>\
 										<tr>\
-											<th>TNC- LANDSCAPES</th>\
-											<td>\
-												<img src="img/fsys/Maize Mixed-RGB.png" width="30" height="30"><br>\
-												Maize- Mixed\
-												</span>\
-											</td>\
-											<td>\
-												<span class="td-row">\
-													<span class="td-cell">\
-														<img src="img/crop/Maize-RGB.png" width="25" height="25">\
-													</span>\
-													<span class="td-cell">Maize</span>\
-												</span><br>\
-											</td>\
-											<td>\
-												<span class="td-row">\
-													<span class="td-cell">\
-														<img src="img/partner/CT-RGB.png" width="30" height="30">\
-													</span>\
-													<span class="td-cell">Commodity Traders </span>\
-												</span>\
-											</td>\
-										</tr>\
-										<tr>\
 											<th>WB - KENYA</th>\
 											<td>\
 												Various\
@@ -1730,7 +1746,7 @@ function contentUC(feature,layer) {
 							  <div class="accordion-item">\
 								<h2 class="accordion-header" id="headingThree">\
 								  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">\
-									Waitlisted Use Cases\
+									Strategic Ecosystem Partner Use Cases\
 								  </button>\
 								</h2>\
 								<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">\
@@ -1745,6 +1761,62 @@ function contentUC(feature,layer) {
 												</tr>\
 											</thead>\
 											<tbody>\
+												<tr>\
+													<th>TAAT</th>\
+													<td>\
+														Various\
+													</td>\
+													<td>\
+														Various\
+													</td>\
+													<td>\
+														<img src="img/partner/DPM-RGB.png" width="30" height="30"><br>\
+														Demand Partner\
+													</td>\
+												</tr>\
+											</tbody>\
+										</table>\
+									</div>\
+								</div>\
+							  </div>\
+							  <div class="accordion-item">\
+								<h2 class="accordion-header" id="headingFour">\
+								  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">\
+									Waitlisted Use Cases\
+								  </button>\
+								</h2>\
+								<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">\
+									<div class="accordion-body">\
+										<table style="width:100%;" class="table table-bordered table-responsive">\
+											<thead>\
+												<tr>\
+													<th>Use Case</th>\
+													<th>Farming System</th>\
+													<th>Mandate Crops</th>\
+													<th>Demand Partners</th>\
+												</tr>\
+											</thead>\
+											<tbody>\
+												<tr>\
+													<th>TNC- LANDSCAPES</th>\
+													<td>\
+														<img src="img/fsys/Maize Mixed-RGB.png" width="30" height="30"><br>\
+														Maize- Mixed\
+														</span>\
+													</td>\
+													<td>\
+														<span class="td-row">\
+															<span class="td-cell">\
+																<img src="img/crop/Maize-RGB.png" width="25" height="25">\
+															</span>\
+															<span class="td-cell">Maize</span>\
+														</span><br>\
+													</td>\
+													<td>\
+														<img src="img/partner/CT-RGB.png" width="30" height="30"><br>\
+														Commodity Traders\
+													</td>\
+												</tr>\
 												<tr>\
 													<th>FTMA</th>\
 													<td>\
@@ -1765,27 +1837,8 @@ function contentUC(feature,layer) {
 														</span>\
 													</td>\
 													<td>\
-														<span class="td-row">\
-															<span class="td-cell">\
-																<img src="img/partner/FS_NGOs-RGB.png" width="30" height="30">\
-															</span>\
-															<span class="td-cell">Farmer Supporting NGOs</span>\
-														</span>\
-													</td>\
-												</tr>\
-												<tr>\
-													<th>TAAT</th>\
-													<td>\
-														Various\
-													</td>\
-													<td>\
-														Various\
-													</td>\
-													<td>\
-														<span class="td-row">\
-															<span class="td-cell"><img src="img/partner/DPM-RGB.png" width="30" height="30"></span>\
-															<span class="td-cell">Demand Partner</span>\
-														</span>\
+														<img src="img/partner/FS_NGOs-RGB.png" width="30" height="30"><br>\
+														Farmer Supporting NGOs\
 													</td>\
 												</tr>\
 											</tbody>\
@@ -1888,30 +1941,6 @@ function contentUC(feature,layer) {
 										</thead>\
 										<tbody>\
 											<tr>\
-												<th>TNC- LANDSCAPES</th>\
-												<td>\
-													<img src="img/fsys/Maize Mixed-RGB.png" width="30" height="30"><br>\
-													Maize- Mixed\
-													</span>\
-												</td>\
-												<td>\
-													<span class="td-row">\
-														<span class="td-cell">\
-															<img src="img/crop/Maize-RGB.png" width="25" height="25">\
-														</span>\
-														<span class="td-cell">Maize</span>\
-													</span><br>\
-												</td>\
-												<td>\
-													<span class="td-row">\
-														<span class="td-cell">\
-															<img src="img/partner/CT-RGB.png" width="30" height="30">\
-														</span>\
-														<span class="td-cell">Commodity Traders </span>\
-													</span>\
-												</td>\
-											</tr>\
-											<tr>\
 												<th>CROPNUTS</th>\
 												<td>\
 													Various\
@@ -1936,7 +1965,7 @@ function contentUC(feature,layer) {
 								  <div class="accordion-item">\
 									<h2 class="accordion-header" id="headingThree">\
 									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">\
-										Waitlisted Use Cases\
+										Strategic Ecosystem Partner Use Cases\
 									  </button>\
 									</h2>\
 									<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">\
@@ -1951,30 +1980,6 @@ function contentUC(feature,layer) {
 													</tr>\
 												</thead>\
 												<tbody>\
-													<tr>\
-														<th>FTMA</th>\
-														<td>\
-															<span class="td-row">\
-																<span class="td-cell"><img src="img/fsys/Maize Mixed-RGB.png" width="30" height="30"></span>\
-																<span class="td-cell">Maize Mixed </span>\
-															</span>\
-														</td>\
-														<td>\
-															<span class="td-row">\
-																<span class="td-cell">\
-																	<img src="img/crop/Maize-RGB.png" width="25" height="25">\
-																</span>\
-																<span class="td-cell">Maize</span>\
-															</span>\
-															<span class="td-row">\
-																<span class="td-cell">Potatoes</span>\
-															</span>\
-														</td>\
-														<td>\
-															<img src="img/partner/FS_NGOs-RGB.png" width="30" height="30"><br>\
-															Farmer Supporting NGOs\
-														</td>\
-													</tr>\
 													<tr>\
 														<th>TAAT</th>\
 														<td>\
@@ -1999,6 +2004,73 @@ function contentUC(feature,layer) {
 														<td>\
 															<img src="img/partner/DPM-RGB.png" width="30" height="30"><br>\
 															Demand Partner\
+														</td>\
+													</tr>\
+												</tbody>\
+											</table>\
+										</div>\
+									</div>\
+								  </div>\
+								  <div class="accordion-item">\
+									<h2 class="accordion-header" id="headingFour">\
+									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">\
+										Waitlisted Use Cases\
+									  </button>\
+									</h2>\
+									<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">\
+										<div class="accordion-body">\
+											<table style="width:100%;" class="table table-bordered table-responsive">\
+												<thead>\
+													<tr>\
+														<th>Use Case</th>\
+														<th>Farming System</th>\
+														<th>Mandate Crops</th>\
+														<th>Demand Partners</th>\
+													</tr>\
+												</thead>\
+												<tbody>\
+													<tr>\
+														<th>TNC- LANDSCAPES</th>\
+														<td>\
+															<img src="img/fsys/Maize Mixed-RGB.png" width="30" height="30"><br>\
+															Maize- Mixed\
+															</span>\
+														</td>\
+														<td>\
+															<span class="td-row">\
+																<span class="td-cell">\
+																	<img src="img/crop/Maize-RGB.png" width="25" height="25">\
+																</span>\
+																<span class="td-cell">Maize</span>\
+															</span><br>\
+														</td>\
+														<td>\
+															<img src="img/partner/CT-RGB.png" width="30" height="30"><br>\
+															Commodity Traders \
+														</td>\
+													</tr>\
+													<tr>\
+														<th>FTMA</th>\
+														<td>\
+															<span class="td-row">\
+																<span class="td-cell"><img src="img/fsys/Maize Mixed-RGB.png" width="30" height="30"></span>\
+																<span class="td-cell">Maize Mixed </span>\
+															</span>\
+														</td>\
+														<td>\
+															<span class="td-row">\
+																<span class="td-cell">\
+																	<img src="img/crop/Maize-RGB.png" width="25" height="25">\
+																</span>\
+																<span class="td-cell">Maize</span>\
+															</span>\
+															<span class="td-row">\
+																<span class="td-cell">Potatoes</span>\
+															</span>\
+														</td>\
+														<td>\
+															<img src="img/partner/FS_NGOs-RGB.png" width="30" height="30"><br>\
+															Farmer Supporting NGOs\
 														</td>\
 													</tr>\
 												</tbody>\
@@ -2155,7 +2227,7 @@ function contentUC(feature,layer) {
 								  <div class="accordion-item">\
 									<h2 class="accordion-header" id="headingThree">\
 									  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">\
-										Waitlisted Use Cases\
+										Strategic Ecosystem Partner Use Cases\
 									  </button>\
 									</h2>\
 									<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">\
@@ -2202,7 +2274,7 @@ function contentUC(feature,layer) {
 								  <div class="accordion-item">\
 									<h2 class="accordion-header" id="headingOne">\
 									  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">\
-										Waitlisted Use Cases\
+										Cohort 2 Use Cases\
 									  </button>\
 									</h2>\
 									<div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">\
@@ -2308,6 +2380,53 @@ function contentUC(feature,layer) {
 											</tbody>\
 										</table>\
 									  </div>\
+									</div>\
+								  </div>\
+								</div>\
+								</div>';
+			layer.on('click', function() {
+				sidebar.setContent(cc).show();
+			});
+		}
+		else if (['MLI'].includes(feature.properties['iso3'])) {
+			var cc = '<div style="padding-top: 10px;" width="300px" height="300px">\
+								<div style=display:inline-block;vertical-align:top;><img src="img/flags/mali.png" width="100px" heigth="100px"></div>\
+								<div style="display:inline-block; margin-bottom: 30px;"><h1>&nbsp &nbsp Mali Use Cases</h1></div>\
+								<div class="accordion" id="accordionExample">\
+								  <div class="accordion-item">\
+									<h2 class="accordion-header" id="headingThree">\
+									  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">\
+										Strategic Ecosystem Partner Use Cases\
+									  </button>\
+									</h2>\
+									<div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-bs-parent="#accordionExample">\
+										<div class="accordion-body">\
+											<table style="width:100%;" class="table table-bordered table-responsive">\
+												<thead>\
+													<tr>\
+														<th>Use Case</th>\
+														<th>Farming System</th>\
+														<th>Mandate Crops</th>\
+														<th>Demand Partners</th>\
+													</tr>\
+												</thead>\
+												<tbody>\
+													<tr>\
+														<th>AFRICARISING</th>\
+														<td>\
+															Various\
+														</td>\
+														<td>\
+															Various\
+														</td>\
+														<td>\
+															<img src="img/partner/DPM-RGB.png" width="30" height="30"><br>\
+															Demand Partner\
+														</td>\
+													</tr>\
+												</tbody>\
+											</table>\
+										</div>\
 									</div>\
 								  </div>\
 								</div>\
